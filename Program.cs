@@ -6,21 +6,36 @@ namespace MaximumGeneric
     {
         static void Main(string[] args)
         {
-            //Greeting Meesage
-            Console.WriteLine("Welcome to Generic Program.");
+            Console.WriteLine("Welcome to the finding maximum number program using generics");
 
-            //User Input
-            Console.WriteLine("Welcome to the Generics programs");
-            Console.Write("Enter First Number : ");
-            int firstValue = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Second Number : ");
-            int secondValue = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter Third Number : ");
-            int thirdValue = Convert.ToInt32(Console.ReadLine());
-            //printing Output
-            int resultNum = FindMaximum.ThreeMaxIntNumber(firstValue, secondValue, thirdValue);
-            Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resultNum, firstValue, secondValue, thirdValue);
-            Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("1: Find Max Of Three Int Number" + "\n2: Find Max Of Three Float Number" + "\n3.Exit");
+
+                Console.Write("Enter your choice From");
+                int choice = int.Parse(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        int firstIntValue = 50, secondIntValue = 20, thirdIntValue = 10;
+                        int resIntNum = MaxThreenumber.MaxIntNumThree(firstIntValue, secondIntValue, thirdIntValue);
+                        Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resIntNum, firstIntValue, secondIntValue, thirdIntValue);
+                        Console.ReadLine();
+                        break;
+                    case 2:
+                        float firstFtVal = 2.2f, secondFtVal = 3.4f, thirdFtVal = 3.2f;
+                        float resFtNum = MaxThreenumber.MaxFloatNumThree(firstFtVal, secondFtVal, thirdFtVal);
+                        Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resFtNum, firstFtVal, secondFtVal, thirdFtVal);
+                        Console.ReadLine();
+                        break;
+                    case 3:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Choose correct choice");
+                        break;
+                }
+            }
         }
     }
 }
